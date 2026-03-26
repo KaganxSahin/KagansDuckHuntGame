@@ -1,14 +1,5 @@
-<div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Unity_2021_Logo.svg" alt="Unity Logo" width="250" />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino Logo" width="200" />
-</div>
-
-<br>
-
 # 🦆 Duck Hunt Custom Controller (Unity + Arduino)
 
-![Project Status](https://img.shields.io/badge/Status-Completed-success)
 ![Platform](https://img.shields.io/badge/Platform-Unity_2D-black)
 ![Hardware](https://img.shields.io/badge/Hardware-Arduino_Uno-blue)
 
@@ -40,7 +31,21 @@ All sensor and trigger inputs are connected to **Digital Pins** on the Arduino U
 > **Note on Haptic Setup:** Connect the micro vibration motor directly to the `Motor A` terminals on the L9110S driver. 
 
 ---
+## 🎮 How the Light Gun Mechanism Works
 
+The project utilizes a **Sequential Light Detection** technique, the same principle used by the original 1984 NES Zapper, to achieve high-accuracy targeting with simple hardware.
+
+### The 5-Step Detection Cycle:
+
+1.  **Trigger Input:** When the physical trigger is pulled, the **Arduino** detects a signal on **Digital Pin 3** and immediately sends a "Fire" command to **Unity** via Serial Communication.
+2.  **Black Frame Masking:** For a split second (typically 1 frame), Unity renders the entire game screen **completely black**. This happens so fast it is barely perceptible to the human eye.
+3.  **Target Highlighting:** Within that same black frame, Unity draws a **solid white circle** exclusively at the target's current (x,y) coordinates.
+4.  **LDR Verification:** * **MISS:** If the gun is pointed at the background, the **LDR sensor** reads "LOW" (darkness).
+    * **HIT:** If the gun is pointed at the target, the **LDR sensor** detects the white flash and returns a "HIGH" signal on **Digital Pin 2**.
+5.  **Validation & Feedback:** Arduino relays the light detection data back to Unity. If Unity receives both the "Trigger" and "Light Detected" signals within the same sequence, a **Hit** is registered. Simultaneously, the Arduino activates the **L9110S driver** to provide haptic recoil.
+
+> 🌑 **Note on Environmental Lighting:** Because the **LDR (Light Dependent Resistor)** is highly sensitive to the visible spectrum, ambient light from lamps or windows can cause "False Positives." A **dark room** ensures the sensor only triggers from the high-contrast white flash on the screen.
+---
 ## 💻 Software Structure
 
 The project is divided into two main environments:
