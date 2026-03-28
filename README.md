@@ -56,3 +56,12 @@ The project is divided into two main environments:
 This project was built upon the foundational 2D game mechanics and initial Unity architecture created by GitHub user **[jimyhoang]**. 
 
 The physical hardware redesign, Arduino code modifications for inverted pull-up logic (`!digitalRead`) and haptic feedback, along with the complete Unity C# codebase standardization, were developed and implemented by **[KaganxSahin]**.
+
+---
+## 🖼️ Project Gallery
+![WhatsApp Image 2026-03-29 at 00 46 02](https://github.com/user-attachments/assets/59ec8c66-0dec-4a98-b8c8-2c887c591bbc)
+![WhatsApp Image 2026-03-29 at 00 46 02 (3)](https://github.com/user-attachments/assets/d7e6781c-b189-421c-b20a-0edc31dac47d)
+![WhatsApp Image 2026-03-29 at 00 46 02 (2)](https://github.com/user-attachments/assets/22474ff1-2556-416e-bff1-918768f7d670)
+![WhatsApp Image 2026-03-29 at 00 46 02 (1)](https://github.com/user-attachments/assets/367fa133-0289-442a-a2b2-af57e0106134)
+
+
