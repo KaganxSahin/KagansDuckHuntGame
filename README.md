@@ -51,3 +51,7 @@ The project is divided into two main environments:
    * `ScoreObject.cs`: UI visual feedback.
 
 ---
+## 🤝 Credits & Acknowledgements
+
+This project was built upon the foundational 2D game mechanics and initial Unity architecture created by GitHub user **[jimyhoang]**. 
+The physical hardware redesign, Arduino code modifications for inverted pull-up logic (`!digitalRead`) and haptic feedback, along with the complete Unity C# codebase standardization, were developed and implemented by **[KaganxSahin]**.
