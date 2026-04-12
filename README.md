@@ -25,6 +25,16 @@ All sensor and trigger inputs are connected to **Digital Pins** on the Arduino U
 > **Note:** Connect the micro vibration motor directly to the `Motor A` terminals on the L9110S driver. 
 
 ---
+
+## 🌐 Wokwi Circuit Simulation
+
+You can explore and test the hardware logic virtually before building the physical circuit:
+👉 **[View the Wokwi Simulation Here](https://wokwi.com/projects/460911006135012353)**
+
+> 💡 **Simulation Note:** Since Wokwi does not feature a native haptic vibration motor or the L9110S motor driver module, a **Relay Module** is used in the simulation to mock this behavior. When a successful hit is registered, the relay will activate (clicking on/off). This relay state change represents the exact moment the L9110S driver would trigger the haptic recoil motor in the physical build.
+
+---
+
 ## 🎮 How the Light Gun Mechanism Works
 
 The project utilizes a **Sequential Light Detection** technique, the same principle used by the original 1984 NES Zapper, to achieve high-accuracy targeting with simple hardware.
@@ -37,7 +47,7 @@ The project utilizes a **Sequential Light Detection** technique, the same princi
 4.  **LDR Verification:** * **MISS:** If the gun is pointed at the background, the **LDR sensor** reads "LOW" (darkness).
     * **HIT:** If the gun is pointed at the target, the **LDR sensor** detects the white flash and returns a "HIGH" signal on **Digital Pin 2**.
 5.  **Validation & Feedback:** Arduino relays the light detection data back to Unity. If Unity receives both the "Trigger" and "Light Detected" signals within the same sequence, a **Hit** is registered. Simultaneously, the Arduino activates the **L9110S driver** to provide haptic recoil.
-   
+    
 ---
 
 ## 💻 Software Structure
@@ -49,19 +59,22 @@ The project is divided into two main environments:
    * `GameController.cs`: Core logic and screen flash mechanism.
    * `Duck.cs`: Target AI and animation states.
    * `ScoreObject.cs`: UI visual feedback.
+     
+---
+
+## 🖼️ Project Gallery
+![WhatsApp Image 2026-03-29 at 00 46 02](https://github.com/user-attachments/assets/59ec8c66-0dec-4a98-b8c8-2c887c591bbc)
+![WhatsApp Image 2026-03-29 at 00 46 02 (3)](https://github.com/user-attachments/assets/d7e6781c-b189-421c-b20a-0edc31dac47d)
+![WhatsApp Image 2026-03-29 at 00 46 02 (2)](https://github.com/user-attachments/assets/22474ff1-2556-416e-bff1-918768f7d670)
+![WhatsApp Image 2026-03-29 at 00 46 02 (1)](https://github.com/user-attachments/assets/367fa133-0289-442a-a2b2-af57e0106134)
 
 ---
+
 ## 🤝 Credits & Acknowledgements
 
 This project was built upon the foundational 2D game mechanics and initial Unity architecture created by GitHub user **[jimyhoang]**. 
 
 The physical hardware redesign, Arduino code modifications for inverted pull-up logic (`!digitalRead`) and haptic feedback, along with the complete Unity C# codebase standardization, were developed and implemented by **[KaganxSahin]**.
 
----
-## 🖼️ Project Gallery
-![WhatsApp Image 2026-03-29 at 00 46 02](https://github.com/user-attachments/assets/59ec8c66-0dec-4a98-b8c8-2c887c591bbc)
-![WhatsApp Image 2026-03-29 at 00 46 02 (3)](https://github.com/user-attachments/assets/d7e6781c-b189-421c-b20a-0edc31dac47d)
-![WhatsApp Image 2026-03-29 at 00 46 02 (2)](https://github.com/user-attachments/assets/22474ff1-2556-416e-bff1-918768f7d670)
-![WhatsApp Image 2026-03-29 at 00 46 02 (1)](https://github.com/user-attachments/assets/367fa133-0289-442a-a2b2-af57e0106134)
 
 
