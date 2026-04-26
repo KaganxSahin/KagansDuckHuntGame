@@ -5,6 +5,8 @@
 
 A hardware-in-the-loop interactive game project that recreates the classic "Duck Hunt" experience using a custom-built physical light gun. This project seamlessly integrates Embedded C++ (Arduino) for hardware processing with C# (Unity) for game logic and UI.
 
+> 📄 **Technical Report:** For an in-depth analysis of the system architecture, optical detection mechanism, and hardware-software synchronization, please read the **[Full Project Report (PDF)](docs/DuckHuntGameReport.pdf)**.
+> 
 > ⚠️ **IMPORTANT ENVIRONMENTAL REQUIREMENT:** > For the Light Dependent Resistor (LDR) to accurately detect the white screen flashes without interference, **this game must be played in a dark or dimly lit room.** High ambient lighting or sunlight will cause false sensor readings and unstable targeting logic.
 
 ---
